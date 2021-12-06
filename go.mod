@@ -1,4 +1,4 @@
-module go-jpush
+module github.com/ib1ack/jpush-go
 
 require (
 	github.com/LyricTian/queue v1.2.0
