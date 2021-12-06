@@ -1,4 +1,4 @@
-module jpush
+module go-jpush
 
 require (
 	github.com/LyricTian/queue v1.2.0
