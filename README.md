@@ -2,12 +2,14 @@
 
 [![Build][Build-Status-Image]][Build-Status-Url] [![Codecov][codecov-image]][codecov-url] [![ReportCard][reportcard-image]][reportcard-url] [![GoDoc][godoc-image]][godoc-url] [![License][license-image]][license-url]
 
+## 说明
+项目fork自<https://github.com/LyricTian/jpush-go>
 ## 快速开始
 
 ### 下载安装
 
 ```bash
-$ go get -u -v github.com/LyricTian/jpush-go
+$ go get -u -v github.com/ib1ack/jpush-go
 ```
 
 ### 创建文件 `push.go`
@@ -18,8 +20,9 @@ package main
 import (
 	"context"
 	"fmt"
+	"context"
 
-	"github.com/LyricTian/jpush-go"
+	"github.com/ib1ack/jpush-go"
 )
 
 func main() {
@@ -36,7 +39,7 @@ func main() {
 		Notification: jpush.NewNotification().SetAlert("通知测试"),
 		Options:      jpush.NewOptions().SetSendNO(1),
 	}
-	err := jpush.Push(context.Background(), payload, func(result *jpush.PushResult, err error) {
+	err := jpush.Push(context.Background(), payload, func(ctx context.Context, result *jpush.PushResult, err error) {
 		if err != nil {
 			panic(err)
 		}
